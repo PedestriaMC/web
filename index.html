@@ -3,31 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <title>Pedestria</title>
+    <link rel="stylesheet" href="css/minecraft-font.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <style>
         html, body {
             height: 100%;
             margin: 0;
             padding: 0;
-            background-color: #242f91;
+            background-color: #0E0E20;
             overflow: hidden;
             /* background */
         }
-
-        .inter-title {
-            font-family: "Inter", sans-serif;
-            font-optical-sizing: auto;
-            font-weight: 900;
-            font-style: normal;
-        }
-        .inter-body {
-            font-family: "Inter", sans-serif;
+        .rubrik-body {
+            font-family: "Rubik", sans-serif;
             font-optical-sizing: auto;
             font-weight: 300;
             font-style: normal;
+        }
+        .rubrik-title {
+            font-family: "Rubik", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        #content {
+            margin-top: 7vh;
+            height: calc(100vh - 7vh);
+            background-color: transparent;
+            overflow-y: scroll;
+            justify-content: center;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
         }
 
         /* https://css-tricks.com/classy-and-cool-custom-css-scrollbars-a-showcase/ */
@@ -44,38 +55,41 @@
             position: fixed;
             top: 0;
             width: 100%;
-            height: 7vh;
+            height: 8vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 3vh;
+            box-sizing: border-box;
         }
         #header-link {
-            display: inline-block;
-            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 60%;
+            max-width: 70%;
+            margin: 5%;
         }
         #pedestria-word-mark {
-            max-height: 50%;
+            max-height: 100%;
+            max-width: 90%;
+            width: auto;
             height: auto;
             display: block;
-        }
-        #content {
-            margin-top: 7vh;
-            height: calc(100vh - 7vh);
-            background-color: transparent;
-            overflow-y: scroll;
+            object-fit: contain;
         }
         #projects-header {
-            margin-left: 10%;
-            font-size: xx-large;
+            font-size: xxx-large;
             color: white;
         }
         #footer {
             background-color: black;
             height: 10vh;
             bottom: 0;
+            flex-shrink: 0;
+            margin-top: auto;
         }
         #cards {
+            margin-top: 0;
             margin-left: 10%;
             margin-right: 10%;
             display: flex;
@@ -83,49 +97,107 @@
             justify-content: center;
             gap: 2.5%;
         }
+        #nameColor {
+            background-image: linear-gradient(90deg, #FF5555, #5555FF);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            -webkit-text-fill-color: transparent;
+        }
         .card {
-            border: 1px solid white;
-            width: 45%;
             padding: 1%;
-            background-color: white;
+            border-radius: 10px;
+            background-color: rgb(0, 0, 0, 0.8);
+            color: white;
+            container-type: inline-size;
+            container-name: project-card;
+            flex: 1 1 45%;
+        }
+        .card:hover {
         }
         .serverCount {
-            color: dimgray;
+            color: darkgray;
+            display: inline;
+        }
+        .onlineDot {
+            color: springgreen;
+            display: inline;
+        }
+        .projectTitle {
+            margin: 0;
+            min-width: 0;
+            font-family: Minecraftia, sans-serif;
+            display: inline;
+            white-space: nowrap;
+            font-size: clamp(0.75rem, 10cqw, 5rem);
+        }
+        .titleRow {
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+            justify-content: center;
+            gap: 0.15em;
+            max-width: 100%;
+            overflow: hidden;
+        }
+        @media (max-width: 600px) {
+            .card {
+                flex: 1 1 90%;
+                margin-top: 3vh;
+            }
         }
     </style>
 
 </head>
 <body>
 <div id="header">
-    <a id="header-link" href="">
+    <a id="header-link" href="https://www.pedestria.com/index.html">
         <img id="pedestria-word-mark" src="img/pedestria-light.png" alt="Pedestria">
     </a>
 </div>
 
-<div id="content">
-    <div id="projects">
-        <h1 id="projects-header" class="rubik-300"></h1>
-    </div>
-    <div id="cards">
+<div id="content" class="rubrik-body">
 
+    <h1 id="projects-header" class="rubik-title"><strong>Main Projects</strong></h1>
+
+    <div id="cards">
         <div id="strings-card" class="card">
-            <img src="https://cdn.modrinth.com/data/cached_images/9cf4de9eef2f71dcbecbf70f9b8d9f7dc8ffa7cd.jpeg" alt="Strings" style="width: 100%; margin: 0;">
-            <h2 class="inter-title">Strings</h2>
+            <div class="titleRow">
+                <h1 class="projectTitle" style="color: #555555">[</h1>
+                <h1 class="projectTitle" style="color: #55FFFF">Strings</h1>
+                <h1 class="projectTitle" style="color: #555555">]</h1>
+            </div>
+
+            <p class="onlineDot">•</p>
             <p id="strings-server-count" class="serverCount inter-body">Online Servers: Loading...</p>
+
+            <p style="text-align: left">
+                Strings offers extensive chat customization for Minecraft: Java Edition servers.
+                Features include various chat channel types, a moderation suite,
+                extensive styling, and much more.
+                With support for other plugins, Strings is a very versatile tool.
+            </p>
+
         </div>
 
         <div id="namecolor-card" class="card">
-            <img src="https://cdn.modrinth.com/data/cached_images/33f10c1b0475b07d711d7208babce8f55fa606a5.png" alt="Strings" style="width: 100%; margin: 0;">
-            <h2 class="inter-title">NameColor</h2>
-            <p id="namecolor-server-count" class="serverCount inter-body">Online Servers: Loading...</p>
+            <div style="display: block;">
+                <h1 class="projectTitle" style="color: #555555">[</h1>
+                <h1 id="nameColor" class="projectTitle" style="color: #55FFFF">NameColor</h1>
+                <h1 class="projectTitle" style="color: #555555">]</h1>
+            </div>
+
+            <p class="onlineDot">•</p>
+            <p id="namecolor-server-count" class="serverCount inter-body"> Online Servers: Loading...</p>
+
+            <p style="text-align: left">
+                NameColor lets Minecraft: Java Edition players customize their in-game names.
+                Options include gradients, hex colors, and styles such as bold and italic, and more.
+                With support for databases such as MySQL, NameColor can run on servers large and small.
+
+            </p>
         </div>
     </div>
-    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-    <p>Paragraph</p>
     <div id="footer">
         <p>blah blah blah blah blah</p>
     </div>
@@ -143,6 +215,22 @@
         document.getElementById("namecolor-server-count").textContent = `Online Servers: ${response}`;
     });
 
+</script>
+<script src="js/vanta/p5.min.js"></script>
+<script src="js/vanta/vanta.topology.min.js"></script>
+<script>
+    VANTA.TOPOLOGY({
+        el: "body",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.00,
+        minWidth: 200.00,
+        scale: 1.00,
+        scaleMobile: 1.00,
+        color: 0x51ee1,
+        backgroundColor: 0xe0e20
+    })
 </script>
 </body>
 </html>
