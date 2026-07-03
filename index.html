@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <style>
         html, body {
             height: 100%;
@@ -16,12 +16,20 @@
             overflow: hidden;
             /* background */
         }
-        .rubik-300 {
-                    font-family: "Rubik", sans-serif;
-                    font-optical-sizing: auto;
-                    font-weight: 300;
-                    font-style: normal;
-                }
+
+        .inter-title {
+            font-family: "Inter", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 900;
+            font-style: normal;
+        }
+        .inter-body {
+            font-family: "Inter", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 300;
+            font-style: normal;
+        }
+
         /* https://css-tricks.com/classy-and-cool-custom-css-scrollbars-a-showcase/ */
         #content::-webkit-scrollbar {
             width: 5px;
@@ -53,7 +61,7 @@
         }
         #content {
             margin-top: 7vh;
-            height: calc(100vh - 7vh););
+            height: calc(100vh - 7vh);
             background-color: transparent;
             overflow-y: scroll;
         }
@@ -61,6 +69,28 @@
             margin-left: 10%;
             font-size: xx-large;
             color: white;
+        }
+        #footer {
+            background-color: black;
+            height: 10vh;
+            bottom: 0;
+        }
+        #cards {
+            margin-left: 10%;
+            margin-right: 10%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2.5%;
+        }
+        .card {
+            border: 1px solid white;
+            width: 45%;
+            padding: 1%;
+            background-color: white;
+        }
+        .serverCount {
+            color: dimgray;
         }
     </style>
 
@@ -76,14 +106,42 @@
     <div id="projects">
         <h1 id="projects-header" class="rubik-300"></h1>
     </div>
+    <div id="cards">
+
+        <div id="strings-card" class="card">
+            <img src="https://cdn.modrinth.com/data/cached_images/9cf4de9eef2f71dcbecbf70f9b8d9f7dc8ffa7cd.jpeg" alt="Strings" style="width: 100%; margin: 0;">
+            <h2 class="inter-title">Strings</h2>
+            <p id="strings-server-count" class="serverCount inter-body">Online Servers: Loading...</p>
+        </div>
+
+        <div id="namecolor-card" class="card">
+            <img src="https://cdn.modrinth.com/data/cached_images/33f10c1b0475b07d711d7208babce8f55fa606a5.png" alt="Strings" style="width: 100%; margin: 0;">
+            <h2 class="inter-title">NameColor</h2>
+            <p id="namecolor-server-count" class="serverCount inter-body">Online Servers: Loading...</p>
+        </div>
+    </div>
     <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
     <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
     <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
     <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
     <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
     <p>Paragraph</p>
+    <div id="footer">
+        <p>blah blah blah blah blah</p>
+    </div>
 </div>
+
+<script src="js/external/bstats-analytics.js"></script>
 <script>
+    // Strings
+    serverCount(22597).then(response => {
+        document.getElementById("strings-server-count").textContent = `Online Servers: ${response}`;
+    });
+
+    // NameColor
+    serverCount(22112).then(response => {
+        document.getElementById("namecolor-server-count").textContent = `Online Servers: ${response}`;
+    });
 
 </script>
 </body>
