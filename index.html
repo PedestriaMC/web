@@ -88,10 +88,6 @@
             display: block;
             object-fit: contain;
         }
-        #projects-header {
-            font-size: xxx-large;
-            color: white;
-        }
         #cards {
             margin-top: 0;
             margin-left: 10%;
@@ -110,7 +106,7 @@
         }
         #footer {
             background-color: rgb(0, 0, 0, 0.5);
-            height: 7dvh;
+            height: 8dvh;
             bottom: 0;
             flex-shrink: 0;
             margin-top: auto;
@@ -118,6 +114,7 @@
             display: flex;
             flex-direction: column;
             padding-bottom: calc(env(safe-area-inset-bottom));
+            justify-content: center;
         }
         #links {
             display: flex;
@@ -128,8 +125,8 @@
         }
         #projects-header {
             margin: 3vh 0 2dvh 0;
-            font-size: 2rem;
-
+            font-size: clamp(1rem, 3rem, 4rem);
+            color: white;
         }
         .card {
             padding: 0;
@@ -182,7 +179,7 @@
             text-align: left;
         }
         .footer-icon {
-            font-size: 2.5dvh;
+            font-size: 1.5rem;
             color: white;
         }
         .project-site-link {
@@ -268,7 +265,7 @@
     </div>
     <br/>
     <div id="footer">
-        <p style="color: whitesmoke; margin: 0;">Pedestria</p>
+        <p style="color: whitesmoke; margin: 0;">© 2026 Pedestria</p>
         <div id="links">
             <a href="https://github.com/pedestriamc">
                 <i class="bi bi-github footer-icon" style="color:white;"></i>
