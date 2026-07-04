@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <style>
         html, body {
             height: 100dvh;
@@ -31,6 +31,13 @@
             font-weight: 400;
             font-style: normal;
         }
+        .mona-sans-title {
+            font-family: "Mona Sans", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 700;
+            font-style: normal;
+            font-variation-settings: "wdth" 100;
+        }
 
         #content {
             margin-top: 7dvh;
@@ -41,6 +48,7 @@
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
+            padding-bottom: calc(1% + env(safe-area-inset-bottom));
         }
 
         /* https://css-tricks.com/classy-and-cool-custom-css-scrollbars-a-showcase/ */
@@ -109,7 +117,7 @@
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            padding: 1%;
+            padding-bottom: calc(1% + env(safe-area-inset-bottom));
         }
         #links {
             display: flex;
@@ -206,7 +214,7 @@
 
 <div id="content" class="rubrik-body">
 
-    <h1 id="projects-header" class="rubik-title">Main Projects</h1>
+    <h1 id="projects-header" class="mona-sans-title">Projects</h1>
 
     <div id="cards">
         <div id="strings-card" class="card">
