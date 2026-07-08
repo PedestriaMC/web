@@ -3,10 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Pedestria</title>
-    <meta name="description" content="Pedestria Software">
+    <meta name="description" content="Pedestria Minecraft server software: Strings, NameColor & more.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="img/favicon-black.ico" type="image/x-icon">
+    <link rel="icon" href="img/favicon-black.ico" type="image/x-icon" media="(prefers-color-scheme: light)">
+    <link rel="icon" href="img/favicon-white.ico" type="image/x-icon" media="(prefers-color-scheme: dark)">
+
     <link rel="stylesheet" href="css/minecraft-font.css">
     <link rel="stylesheet" href="css/bootstrap-icons-1.13.1/bootstrap-icons.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
@@ -139,6 +144,7 @@
             transition: background-color 1s ease-in-out;
             display: flex;
             flex-direction: column;
+            margin-bottom: 2%;
         }
         .card:hover {
             background-color: rgb(25, 25, 25, 1);
@@ -151,13 +157,13 @@
             color: springgreen;
             display: inline;
         }
-        .projectTitle {
+        .project-title {
             margin: 0;
             min-width: 0;
             font-family: Minecraftia, sans-serif;
             display: inline;
             white-space: nowrap;
-            font-size: clamp(0.75rem, 10cqw, 5rem);
+            font-size: clamp(0.3rem, 10cqw, 5rem);
         }
         .titleRow {
             display: flex;
@@ -218,9 +224,9 @@
     <div id="cards">
         <div id="strings-card" class="card">
             <div class="titleRow">
-                <h1 class="projectTitle" style="color: #555555">[</h1>
-                <h1 class="projectTitle" style="color: #55FFFF">Strings</h1>
-                <h1 class="projectTitle" style="color: #555555">]</h1>
+                <h2 class="project-title" style="color: #555555">[</h2>
+                <h2 class="project-title" style="color: #55FFFF">Strings</h2>
+                <h2 class="project-title" style="color: #555555">]</h2>
             </div>
 
             <div>
@@ -242,9 +248,9 @@
 
         <div id="namecolor-card" class="card">
             <div style="display: block;">
-                <h1 class="projectTitle" style="color: #555555">[</h1>
-                <h1 id="nameColor" class="projectTitle" style="color: #55FFFF">NameColor</h1>
-                <h1 class="projectTitle" style="color: #555555">]</h1>
+                <h2 class="project-title" style="color: #555555">[</h2>
+                <h2 id="nameColor" class="project-title" style="color: #55FFFF">NameColor</h2>
+                <h2 class="project-title" style="color: #555555">]</h2>
             </div>
 
             <div>
@@ -260,6 +266,41 @@
 
             <a class="project-site-link" href="https://namecolor.pedestria.com">
                 Visit project site <i class="bi bi-arrow-right"></i>
+            </a>
+        </div>
+
+        <div id="enchanted-harnesses-card" class="card">
+            <h2 class="rubrik-title" style="font-size: clamp(0.3rem, 8cqw, 4.5rem); margin-bottom: 0; margin-top: 2%;">
+                Enchanted Harnesses
+            </h2>
+
+            <div>
+                <p class="onlineDot">•</p>
+                <p id="enchanted-harnesses-server-count" class="serverCount inter-body"> Online Servers: Loading...</p>
+            </div>
+
+            <p class="project-description">
+                Enchanted Harnesses lets Minecraft: Java Edition servers customize default Happy Ghast speeds,
+                and adds a customizable enchantment to allow Happy Ghasts to fly even faster.
+            </p>
+
+            <a class="project-site-link" href="https://modrinth.com/plugin/enchantedharness">
+                Visit project site <i class="bi bi-arrow-right"></i>
+            </a>
+        </div>
+
+        <div id="misc-card" class="card">
+            <h2 class="rubrik-title" style="font-size: clamp(0.3rem, 8cqw, 4.5rem); margin-bottom: 0; margin-top: 2%;">
+                Custom Works
+            </h2>
+
+            <p class="project-description">
+                With experience creating various pieces of software, Pedestria can create custom software solutions.
+                Reach out on Discord or by email.
+            </p>
+
+            <a class="project-site-link" href="mailto:custom@pedestria.com">
+                Email custom@pedestria.com <i class="bi bi-arrow-right"></i>
             </a>
         </div>
     </div>
@@ -292,6 +333,11 @@
         document.getElementById("namecolor-server-count").textContent = `Online Servers: ${response}`;
     });
 
+    // EnchantedHarnesses
+    serverCount(26530).then(response => {
+        document.getElementById("enchanted-harnesses-server-count").textContent = `Online Servers: ${response}`;
+    });
+
 </script>
 <script src="js/vanta/p5.min.js"></script>
 <script src="js/vanta/vanta.topology.min.js"></script>
@@ -309,5 +355,71 @@
         backgroundColor: 0xe0e20
     })
 </script>
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Pedestria",
+        "url": "https://www.pedestria.com",
+        "logo": "https://www.pedestria.com/img/pedestria-light.png",
+        "sameAs": [
+            "https://github.com/pedestriamc",
+            "https://discord.gg/zKQqaxGX89"
+        ]
+    }
+</script>
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Strings",
+        "applicationCategory": "GameApplication",
+        "operatingSystem": "Minecraft: Java Edition",
+        "description": "Strings offers extensive chat customization for Minecraft: Java Edition servers, including chat channels, moderation tools, and styling options.",
+        "url": "https://strings.pedestria.com",
+        "author": {
+            "@type": "Organization",
+            "name": "Pedestria",
+            "url": "https://www.pedestria.com"
+        }
+    }
+</script>
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "NameColor",
+        "applicationCategory": "GameApplication",
+        "operatingSystem": "Minecraft: Java Edition",
+        "description": "NameColor lets players customize their in-game names with colors, gradients, and styles.",
+        "url": "https://namecolor.pedestria.com",
+        "author": {
+            "@type": "Organization",
+            "name": "Pedestria",
+            "url": "https://www.pedestria.com"
+        }
+    }
+</script>
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Enchanted Harnesses",
+        "applicationCategory": "GameApplication",
+        "operatingSystem": "Minecraft: Java Edition",
+        "description": "Enchanted Harnesses lets servers customize Happy Ghast speed, and adds an enchantment to customize speeds even further.",
+        "url": "https://modrinth.com/plugin/enchantedharness",
+        "author": {
+            "@type": "Organization",
+            "name": "Pedestria",
+            "url": "https://www.pedestria.com"
+        }
+    }
+</script>
+
 </body>
 </html>
